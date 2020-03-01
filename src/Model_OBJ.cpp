@@ -1,5 +1,7 @@
 #include "Model_OBJ.h"
 #include <queue>
+#include "igl/readOBJ.h"
+
 #define ITER_NUM 20
 int g_sharp = 0;
 Model_OBJ::Model_OBJ()
@@ -25,7 +27,14 @@ int Model_OBJ::Load(char* filename)
 
 	return 0;
 }
- 
+
+int Model_OBJ::Load(vector<glm::dvec3> const &vs,
+         vector<glm::ivec3> const &fs) {
+  vertices = vs;
+  face_indices = fs;
+  return 0;
+}
+
 void Model_OBJ::Calc_Bounding_Box()
 {
 	min_corner = glm::dvec3(1e30,1e30,1e30);

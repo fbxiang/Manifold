@@ -11,13 +11,14 @@
 #include <string>
 #include <vector>
 #include <cmath>
-#include "glm/glm.hpp"
-#include "glm/gtc/matrix_transform.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include "Octree.h"
 #include "BVH.h"
 #include <map>
 #include <cstdlib>
-#include <igl/readOBJ.h>
+#include <eigen3/Eigen/Eigen>
+
 using namespace std;
 /*************************************************************************** 
   OBJ Loading 
@@ -35,6 +36,7 @@ class Model_OBJ
 
 	Model_OBJ();			
   int Load(char *filename);	// Loads the model
+  int Load(vector<glm::dvec3> const& vs, vector<glm::ivec3> const& fs);
 
  	void Calc_Bounding_Box();
 

@@ -19,6 +19,8 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     set(CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fsanitize=address")
 endif()
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 option(BUILD_PERFORMANCE_TEST "More subdivisition for performance test" OFF)
 option(BUILD_OPENMP "Enable support for OpenMP" OFF)
 option(BUILD_LOG "Enable verbose log" OFF)
@@ -44,7 +46,6 @@ set(
     src/BVH.h
     src/Intersection.cpp
     src/Intersection.h
-    src/main.cpp
     src/Model_OBJ.cpp
     src/Model_OBJ.h
     src/Octree.h    
@@ -55,13 +56,10 @@ set(
     src/simplify.cpp
 )
 
-add_executable(
-    manifold
-    ${manifold_SRC}
-)
+add_library(manifold ${manifold_SRC})
 
-add_executable(
-    simplify
-    ${simplify_SRC}
-)
+add_executable(make_manifold src/main.cpp)
+target_link_libraries(make_manifold manifold)
+
+add_executable(simplify ${simplify_SRC})
 

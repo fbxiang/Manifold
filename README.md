@@ -1,3 +1,5 @@
+Fork and modify for use in our own project.
+
 # Watertight Manifold
 
 Source code for the paper:
