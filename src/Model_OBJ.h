@@ -17,7 +17,7 @@
 #include "BVH.h"
 #include <map>
 #include <cstdlib>
-#include <eigen3/Eigen/Eigen>
+#include <Eigen/Eigen>
 
 using namespace std;
 /*************************************************************************** 

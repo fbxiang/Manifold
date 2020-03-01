@@ -27,6 +27,7 @@ option(BUILD_LOG "Enable verbose log" OFF)
 
 include_directories(src)
 include_directories(3rd)
+include_directories("/usr/include/eigen3")
 
 if(BUILD_PERFORMANCE_TEST)
     add_definitions(-DPERFORMANCE_TEST)
