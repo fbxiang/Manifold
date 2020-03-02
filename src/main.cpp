@@ -12,7 +12,7 @@ int main(int argc, char** argv)
     cout << "./manifold input.obj output.obj [resolution=20000] [-s]\n";
     return 0;
   }
-  obj.Load(argv[1]);
+  obj.LoadFile(argv[1]);
 
   if (argc > 3)
   {

@@ -25,9 +25,9 @@ option(BUILD_PERFORMANCE_TEST "More subdivisition for performance test" OFF)
 option(BUILD_OPENMP "Enable support for OpenMP" OFF)
 option(BUILD_LOG "Enable verbose log" OFF)
 
-include_directories(src)
-include_directories(3rd)
 include_directories("/usr/include/eigen3")
+include_directories("src")
+include_directories("3rd")
 
 if(BUILD_PERFORMANCE_TEST)
     add_definitions(-DPERFORMANCE_TEST)

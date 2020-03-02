@@ -35,7 +35,7 @@ class Model_OBJ
   vector<set<int> > v_faces;
 
 	Model_OBJ();			
-  int Load(char *filename);	// Loads the model
+  int LoadFile(char *filename);	// Loads the model
   int Load(vector<glm::dvec3> const& vs, vector<glm::ivec3> const& fs);
 
  	void Calc_Bounding_Box();
